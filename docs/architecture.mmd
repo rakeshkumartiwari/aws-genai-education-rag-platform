@@ -1,0 +1,14 @@
+flowchart LR
+    User[Student / Faculty Web App] --> CF[Amazon CloudFront]
+    CF --> S3Web[S3 Static Website / Angular UI]
+    S3Web --> APIGW[Amazon API Gateway]
+    APIGW --> Lambda[Lambda: Query Orchestrator]
+    Lambda --> Guardrails[Amazon Bedrock Guardrails]
+    Lambda --> Embed[Amazon Bedrock Embeddings]
+    Lambda --> Vector[Amazon OpenSearch Serverless Vector Index]
+    Lambda --> LLM[Amazon Bedrock LLM]
+    Lambda --> Logs[Amazon CloudWatch Logs]
+    Admin[Course Admin] --> S3Docs[S3 Course Documents]
+    S3Docs --> Ingest[Lambda / Glue Ingestion Job]
+    Ingest --> Embed
+    Ingest --> Vector

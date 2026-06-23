@@ -1,0 +1,35 @@
+# Blueprint only. This is intentionally not a full production template.
+Application: EduMentor AI
+Services:
+  Frontend:
+    - Amazon S3
+    - Amazon CloudFront
+  API:
+    - Amazon API Gateway
+    - AWS Lambda
+  GenAI:
+    - Amazon Bedrock
+    - Bedrock Guardrails
+  Retrieval:
+    - Amazon OpenSearch Serverless
+    - Amazon Titan Embeddings
+  Storage:
+    - Amazon S3
+  Security:
+    - IAM least privilege
+    - AWS KMS
+  Observability:
+    - Amazon CloudWatch
+WellArchitected:
+  OperationalExcellence:
+    - CloudWatch metrics and alarms
+  Security:
+    - Private S3 bucket and encrypted vector store
+  Reliability:
+    - Serverless managed services
+  PerformanceEfficiency:
+    - Top-k retrieval and response caching
+  CostOptimization:
+    - RAG instead of fine-tuning
+  Sustainability:
+    - Serverless scale-to-zero components
